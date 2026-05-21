@@ -84,6 +84,26 @@ section{position:relative;padding:8rem 6vw}
 #p-hero{min-height:100vh;background:#fff;display:flex;flex-direction:column;justify-content:center;padding-top:0}
 .hero-eyebrow{font-size:9px;letter-spacing:.42em;text-transform:uppercase;color:rgba(0,0,0,.6);font-weight:700;margin-bottom:2.5rem}
 .hero-name{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(3rem,8vw,10rem);line-height:.88;color:#0a0a0a}
+.hero-name em{
+  background: linear-gradient(90deg,
+    #0a0a0a 0%,
+    #1047C4 25%,
+    #3b6fe8 45%,
+    #6fa3ff 60%,
+    #1047C4 75%,
+    #0a0a0a 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: name-sweep 3.5s linear infinite;
+  display: block;
+}
+@keyframes name-sweep{
+  0%{background-position:0% center}
+  100%{background-position:200% center}
+}
 .hero-name span{display:block;overflow:hidden}
 .hero-name span em{display:block;font-style:normal}
 .hero-role{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;font-size:clamp(1.1rem,2.5vw,2.8rem);color:#1047C4;margin-top:.8rem}
@@ -112,6 +132,97 @@ section{position:relative;padding:8rem 6vw}
 .pillar-desc{font-size:.85rem;color:rgba(0,0,0,.78);font-weight:300;line-height:1.6;display:block}
 .vision-goal{font-size:clamp(.85rem,1.1vw,.95rem);color:rgba(0,0,0,.82);line-height:1.7;font-weight:300;border-top:1px solid rgba(0,0,0,.07);padding-top:1rem}
 .vision-goal strong{color:#0a0a0a;font-weight:600}
+
+/* ══ HERO LAYOUT 2 COLONNES ══ */
+.hero-layout{
+  display:grid;
+  grid-template-columns:1fr 420px;
+  align-items:start;
+  min-height:100vh;
+  gap:0;
+}
+.hero-text-col{
+  padding:10rem 4vw 6rem 6vw;
+}
+.hero-photo-col{
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  padding:10rem 4vw 4rem 0;
+  position:relative;
+}
+.hero-photo-wrap{
+  position:relative;
+  width:100%;
+  max-width:380px;
+}
+.hero-photo{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:0;
+  object-fit:cover;
+  box-shadow:none;
+  aspect-ratio:3/4;
+  object-position:center top;
+}
+.hero-photo-badge{
+  position:absolute;
+  bottom:-16px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#fff;
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:999px;
+  padding:.55rem 1.2rem;
+  font-size:9px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  font-weight:700;
+  color:#0a0a0a;
+  white-space:nowrap;
+  box-shadow:0 8px 24px rgba(0,0,0,.1);
+  display:flex;
+  align-items:center;
+}
+
+/* ══ RESPONSIVE TABLETTE ══ */
+@media (max-width:900px){
+  .hero-layout{
+    grid-template-columns:1fr;
+    grid-template-rows:auto auto;
+  }
+  .hero-photo-col{
+    order:-1;
+    padding:8rem 6vw 2rem 6vw;
+    justify-content:center;
+  }
+  .hero-photo-wrap{
+    max-width:280px;
+  }
+  .hero-text-col{
+    padding:2rem 6vw 6rem 6vw !important;
+  }
+}
+
+/* ══ RESPONSIVE MOBILE ══ */
+@media (max-width:600px){
+  .hero-layout{
+    grid-template-columns:1fr;
+  }
+  .hero-photo-col{
+    padding:7rem 6vw 1.5rem 6vw;
+  }
+  .hero-photo-wrap{
+    max-width:220px;
+  }
+  .hero-photo{
+    border-radius:0;
+  }
+  .hero-text-col{
+    padding:1.5rem 5vw 5rem 5vw !important;
+  }
+}
 
 .scroll-hint{display:flex;align-items:center;gap:.8rem;margin-top:2.5rem}
 .sl{width:32px;height:1px;background:#1047C4;transform-origin:left;animation:sl 1.8s ease-in-out infinite}
@@ -568,7 +679,7 @@ section{position:relative;padding:8rem 6vw}
         <circle id="cord-knot" cx="26" cy="69" r="3" fill="#333"/>
       </svg>
     </div>
-    <p id="bulb-hint">Cliquez ici<br>pour entrer</p>
+    <p id="bulb-hint">Cliquez sur<br>l'ampoule</p>
   </div>
 
   <div id="e-hero">
@@ -601,8 +712,11 @@ section{position:relative;padding:8rem 6vw}
 
   <section id="p-hero" style="overflow:hidden">
 
+    <!-- LAYOUT 2 COLONNES : TEXTE + PHOTO -->
+    <div class="hero-layout">
+
     <!-- TEXTE GAUCHE -->
-    <div style="padding:10rem 4vw 6rem 6vw">
+    <div class="hero-text-col">
     <p class="hero-eyebrow"><strong>Portfolio</strong> — <strong>2025 / 2026</strong></p>
     <p style="font-size:13px;letter-spacing:.18em;color:rgba(0,0,0,.75);font-weight:700;margin-bottom:.5rem">Bonjour, je suis</p>
     <h1 class="hero-name" data-text="MATOUMBA Willy Alfred.">
@@ -635,6 +749,7 @@ section{position:relative;padding:8rem 6vw}
       <p class="vision-intro">Je crois que les systèmes les plus robustes sont ceux où l'intelligence et la sécurité sont pensées ensemble — pas ajoutées après coup. En ce moment, je traduis cette conviction en actes :</p>
       <div class="vision-pillars">
         <div class="pillar"><div class="pillar-inner"><span class="pillar-title">InvestWorld — en cours de développement</span><span class="pillar-desc">Plateforme de mise en relation startups × investisseurs avec algorithme de matching pondéré (6 critères), intégration Stripe et messagerie chiffrée. Stack : Node.js, Supabase.</span></div></div>
+        <div class="pillar"><div class="pillar-inner"><span class="pillar-title">IA Academy — en conception</span><span class="pillar-desc">Plateforme e-learning dédiée aux métiers de l'IA : prompt engineer, data analyst, ML engineer. Parcours adaptatif, tuteur IA intégré, certifications progressives. Stack : React, Node.js, OpenAI API.</span></div></div>
         <div class="pillar"><div class="pillar-inner"><span class="pillar-title">Spécialisation visée : détection d'anomalies ML</span><span class="pillar-desc">J'oriente activement ma montée en compétences vers l'application du machine learning à la détection de menaces — modèles d'isolation, comportements réseau anormaux, systèmes de scoring en temps réel.</span></div></div>
         <div class="pillar"><div class="pillar-inner"><span class="pillar-title">Focus : sécurité applicative &amp; systèmes intelligents</span><span class="pillar-desc">Architecturer des solutions où chaque couche — du backend à l'API — est pensée avec une logique de résilience et de moindre privilège.</span></div></div>
         <div class="pillar"><div class="pillar-inner"><span class="pillar-title">Automatisation des tâches &amp; workflows intelligents</span><span class="pillar-desc">Concevoir des pipelines automatisés qui éliminent les tâches répétitives — scripts, bots, workflows n8n — pour que l'humain se concentre sur l'essentiel.</span></div></div>
@@ -643,6 +758,19 @@ section{position:relative;padding:8rem 6vw}
     </div>
     <div class="scroll-hint"><div class="sl"></div><span class="st">Défiler</span></div>
     </div><!-- fin texte gauche -->
+
+    <!-- PHOTO DROITE -->
+    <div class="hero-photo-col">
+      <div class="hero-photo-wrap">
+        <img src="photo.jpeg" alt="MATOUMBA Willy Alfred" class="hero-photo" />
+        <div class="hero-photo-badge">
+          <span class="dot" style="background:#4ade80;margin-right:.35rem"></span>
+          Disponible
+        </div>
+      </div>
+    </div>
+
+    </div><!-- fin hero-layout -->
 
   </section>
 
@@ -780,6 +908,145 @@ section{position:relative;padding:8rem 6vw}
       <div class="metric-item"><span class="metric-num">6</span><span class="metric-label">Critères de Matching</span></div>
       <div class="metric-item"><span class="metric-num">&lt;300ms</span><span class="metric-label">Temps de Réponse</span></div>
       <div class="metric-item"><span class="metric-num">190+</span><span class="metric-label">Pays Ciblés</span></div>
+    </div>
+
+    <!-- ══ SÉPARATEUR PROJET ══ -->
+    <div style="width:100%;height:1px;background:rgba(255,255,255,.1);margin:4rem 0"></div>
+
+    <!-- ══════════ PROJET 2 : IA ACADEMY ══════════ -->
+
+    <!-- HEADER PROJET -->
+    <div class="proj-header">
+      <div>
+        <h3 class="proj-main-title">IA Academy</h3>
+        <p class="proj-main-sub">Plateforme de Formation aux Métiers de l'IA</p>
+        <p class="proj-stack-line">React · Node.js · Supabase · OpenAI API · Stripe</p>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:1rem">
+        <span class="proj-wip"><span class="wip-dot"></span>En conception</span>
+        <div class="proj-hero-btns">
+          <a href="https://ia-academy-lilac.vercel.app/" target="_blank" rel="noopener noreferrer" class="proj-btn-solid">Aperçu →</a>
+          <a href="#" class="proj-btn-outline">Roadmap</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROBLÈME / SOLUTION -->
+    <div class="proj-ps-grid">
+      <div class="proj-ps-col">
+        <p class="proj-ps-title">Problème</p>
+        <p class="proj-ps-text">Les formations IA existantes sont soit <strong>trop théoriques</strong>, soit réservées aux profils déjà techniques. La majorité des apprenants — surtout en Afrique — n'ont pas accès à un parcours <strong>structuré, concret et adapté</strong> aux vrais métiers de l'IA.</p>
+      </div>
+      <div class="proj-ps-col">
+        <p class="proj-ps-title solution">Solution</p>
+        <p class="proj-ps-text">Une plateforme e-learning centrée sur les <strong>métiers réels de l'IA</strong> : prompt engineer, data analyst, ML engineer, AI product manager — avec des projets pratiques, un assistant IA intégré et un système de <strong>certification progressive</strong>.</p>
+      </div>
+    </div>
+
+    <!-- OFFRE PÉDAGOGIQUE -->
+    <div class="proj-algo">
+      <p class="proj-block-title">
+        <span class="block-icon" style="color:rgba(255,255,255,0.9)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><line x1="12" y1="7" x2="16" y2="7"/><line x1="12" y1="11" x2="16" y2="11"/><line x1="12" y1="15" x2="14" y2="15"/></svg>
+        </span>
+        Parcours Pédagogique
+      </p>
+      <div class="proj-formula">
+        <code>
+          Niveau 1 — <em>Fondamentaux IA</em> &nbsp;→&nbsp; Comprendre sans coder<br>
+          Niveau 2 — <em>Prompt Engineering</em> &nbsp;→&nbsp; Maîtriser les LLMs<br>
+          Niveau 3 — <em>Data & Machine Learning</em> &nbsp;→&nbsp; Construire des modèles<br>
+          Niveau 4 — <em>Projets Réels</em> &nbsp;→&nbsp; Déployer en production
+        </code>
+        <p class="proj-formula-result">→ Certification délivrée à chaque niveau validé</p>
+      </div>
+    </div>
+
+    <!-- ARCHITECTURE + DÉFIS -->
+    <div class="proj-arch-grid">
+      <div class="proj-arch">
+        <p class="proj-block-title">
+          <span class="block-icon" style="color:rgba(255,255,255,0.9)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </span>
+          Architecture Technique
+        </p>
+        <div class="proj-arch-flow">
+          <div class="arch-node frontend">React<br><small>Frontend</small></div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-node api">API<br>Node.js</div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-node db">Supabase<br><small>Auth + DB</small></div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-node stripe">Stripe<br><small>Abonnement</small></div>
+        </div>
+        <div class="arch-email">
+          <div class="arch-node email" style="background:#7c3aed">🤖 OpenAI API — Assistant IA Intégré</div>
+        </div>
+      </div>
+      <div class="proj-defis">
+        <p class="proj-block-title">
+          <span class="block-icon" style="color:rgba(255,255,255,0.9)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+          </span>
+          Défis Techniques
+        </p>
+        <ul class="defis-list">
+          <li>Personnalisation du parcours par IA</li>
+          <li>Évaluation automatique des projets</li>
+          <li>Gestion des abonnements & accès</li>
+          <li>Intégration LLM dans les cours</li>
+          <li>Scalabilité multi-langues</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- FONCTIONNALITÉS CLÉS -->
+    <div class="proj-importance">
+      <p class="proj-block-title">
+        <span class="block-icon" style="color:rgba(255,255,255,0.9)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </span>
+        Fonctionnalités Clés
+      </p>
+      <div class="importance-grid">
+        <div class="importance-card">
+          <span class="importance-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          </span>
+          <h4>Parcours Adaptatif</h4>
+          <p>L'IA analyse le profil de l'apprenant — niveau, rythme, objectifs — et adapte dynamiquement le contenu, les exercices et la progression pour maximiser l'apprentissage.</p>
+        </div>
+        <div class="importance-card">
+          <span class="importance-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </span>
+          <h4>Assistant IA Intégré</h4>
+          <p>Un tuteur IA disponible 24h/24 répond aux questions de l'apprenant directement dans le cours, explique les concepts complexes et propose des exercices supplémentaires à la demande.</p>
+        </div>
+        <div class="importance-card">
+          <span class="importance-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </span>
+          <h4>Projets Réels & Certification</h4>
+          <p>Chaque niveau se conclut par un projet concret évalué automatiquement. Les certifications délivrées sont vérifiables et directement partageables sur LinkedIn.</p>
+        </div>
+        <div class="importance-card">
+          <span class="importance-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </span>
+          <h4>Accès Freemium & Abonnement</h4>
+          <p>Le niveau 1 est entièrement gratuit pour éliminer les barrières à l'entrée. Les niveaux avancés sont accessibles via abonnement mensuel géré par Stripe, avec tarif adapté aux marchés africains.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MÉTRIQUES IA ACADEMY -->
+    <div class="proj-metrics">
+      <div class="metric-item"><span class="metric-num">4</span><span class="metric-label">Niveaux de Formation</span></div>
+      <div class="metric-item"><span class="metric-num">10+</span><span class="metric-label">Métiers IA Couverts</span></div>
+      <div class="metric-item"><span class="metric-num">24/7</span><span class="metric-label">Tuteur IA Disponible</span></div>
+      <div class="metric-item"><span class="metric-num">100%</span><span class="metric-label">Orienté Pratique</span></div>
     </div>
 
   </section>
