@@ -423,6 +423,77 @@ section{position:relative;padding:8rem 6vw}
 .contact-icon:hover{border-color:#fff;transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.2)}
 .contact-icon:hover span{color:rgba(255,255,255,.8)}
 
+/* ══════════════════════════════════
+   CERTIFICATIONS CARDS
+══════════════════════════════════ */
+.cert-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:1rem;
+  margin-top:.5rem;
+}
+.cert-card{
+  display:flex;flex-direction:column;gap:.75rem;
+  padding:1.2rem 1.4rem;
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:14px;
+  background:#fafafa;
+  transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s,border-color .3s;
+  position:relative;
+}
+.cert-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 32px rgba(16,71,196,.1);
+  border-color:rgba(16,71,196,.25);
+}
+.cert-card-wip{
+  border-style:dashed;
+  opacity:.75;
+}
+.cert-logo{
+  display:flex;align-items:center;gap:.5rem;
+  font-size:8px;letter-spacing:.28em;text-transform:uppercase;font-weight:700;
+}
+.cert-logo-li{color:#0A66C2}
+.cert-logo-udemy{color:#A435F0}
+.cert-logo-cisco{color:#1BA0D7}
+.cert-name{
+  font-weight:700;font-size:.88rem;color:#0a0a0a;line-height:1.4;flex:1;
+}
+.cert-meta{
+  display:flex;flex-direction:column;gap:.45rem;
+}
+.cert-tags{display:flex;flex-wrap:wrap;gap:.35rem}
+.cert-tag{
+  font-size:7.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;
+  padding:.22rem .65rem;border-radius:999px;
+  background:rgba(16,71,196,.08);color:#1047C4;
+}
+.cert-date{
+  font-size:8px;letter-spacing:.22em;text-transform:uppercase;
+  font-weight:700;color:rgba(0,0,0,.38);
+  display:flex;align-items:center;gap:.4rem;
+}
+.wip-label{color:#d97706}
+.cert-btn{
+  align-self:flex-start;
+  display:inline-flex;align-items:center;gap:.45rem;
+  font-size:8px;letter-spacing:.28em;text-transform:uppercase;font-weight:700;
+  padding:.55rem 1.1rem;
+  background:#1047C4;color:#fff;
+  border-radius:999px;text-decoration:none;
+  transition:background .3s,transform .3s,box-shadow .3s;
+  margin-top:.2rem;
+}
+.cert-btn:hover{
+  background:#0535a0;transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(16,71,196,.35);
+}
+.cert-btn-disabled{
+  background:rgba(0,0,0,.1);color:rgba(0,0,0,.4);cursor:default;pointer-events:none;
+}
+.cert-btn-disabled:hover{transform:none;box-shadow:none}
+
 .skill-level{display:flex;flex-direction:column;gap:.35rem;padding:.55rem 0;border-bottom:1px solid rgba(0,0,0,.05)}
 .skill-level:last-child{border-bottom:none}
 .skill-level-top{display:flex;align-items:center;justify-content:space-between}
@@ -1081,10 +1152,108 @@ section{position:relative;padding:8rem 6vw}
         <div class="skill-level"><div class="skill-level-top"><span class="skill-level-left"><svg width="26" height="26" viewBox="0 0 128 128"><path fill="#6772E5" d="M64 8C33.1 8 8 33.1 8 64s25.1 56 56 56 56-25.1 56-56S94.9 8 64 8zm23.1 84.3c-1 1.6-3.1 2.1-4.7 1.1L64 80.7l-18.4 12.7c-1.6 1-3.7.5-4.7-1.1-1-1.6-.5-3.7 1.1-4.7L60 75.3V52.7l-18 12.3c-1.6 1-3.7.5-4.7-1.1s-.5-3.7 1.1-4.7l24-16.4 24 16.4c1.6 1 2.1 3.1 1.1 4.7s-3.1 2.1-4.7 1.1L68 52.7v22.6l18 12.3c1.6 1 2.1 3.1 1.1 4.7z"/></svg> Stripe / API REST</span><span class="lvl-badge in">Intermédiaire</span></div><div class="lvl-bar-bg"><div class="lvl-bar in" data-w="60%"></div></div></div>
         <div class="skill-level"><div class="skill-level-top"><span class="skill-level-left"><svg width="26" height="26" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="60" rx="10" fill="#EA4B71"/><circle cx="18" cy="30" r="7" fill="#fff"/><circle cx="42" cy="30" r="7" fill="#fff"/><rect x="18" y="27" width="24" height="6" fill="#EA4B71"/><circle cx="18" cy="30" r="4" fill="#EA4B71"/><circle cx="42" cy="30" r="4" fill="#EA4B71"/></svg> n8n</span><span class="lvl-badge in">Intermédiaire</span></div><div class="lvl-bar-bg"><div class="lvl-bar in" data-w="58%"></div></div></div>
       </div>
-      <div class="skill-cat">
+      <div class="skill-cat" style="grid-column:1/-1">
         <p class="skill-cat-title">Certifications</p>
-        <div class="skill-item"><span style="display:flex;align-items:center;gap:.6rem"><svg width="26" height="26" viewBox="0 0 128 128"><rect width="128" height="128" rx="8" fill="#1BA0D7"/><text x="64" y="80" font-size="48" text-anchor="middle" fill="#fff" font-family="sans-serif" font-weight="700">C</text></svg>CCNA (en cours)</span></div>
-        <div class="skill-item"><span style="display:flex;align-items:center;gap:.6rem"><svg width="26" height="26" viewBox="0 0 128 128"><rect width="128" height="128" rx="8" fill="#1047C4"/><text x="64" y="82" font-size="44" text-anchor="middle" fill="#fff" font-family="sans-serif" font-weight="700">L3</text></svg>Génie Informatique — L3</span></div>
+        <div class="cert-grid">
+
+          <!-- Cert 1 : LinkedIn Learning — IA générative -->
+          <div class="cert-card">
+            <div class="cert-logo cert-logo-li">
+              <svg width="20" height="20" viewBox="0 0 128 128" fill="none"><rect width="128" height="128" rx="12" fill="#0A66C2"/><path fill="#fff" d="M40 52h16v40H40zm8-24a9 9 0 1 1 0 18 9 9 0 0 1 0-18zm20 24h15v5.5c2.1-3.9 7.2-5.5 11.5-5.5C107 52 108 63 108 72v20H92V74c0-5-.1-11.5-7-11.5S76 68.7 76 74v18H60V52z"/></svg>
+              <span>LinkedIn Learning</span>
+            </div>
+            <p class="cert-name">Le déploiement de l'IA générative dans les organisations</p>
+            <div class="cert-meta">
+              <span class="cert-tags">
+                <span class="cert-tag">IA générative</span>
+                <span class="cert-tag">IA pour les entreprises</span>
+              </span>
+              <span class="cert-date">Mai 2026 · 1h21</span>
+            </div>
+            <a class="cert-btn" href="CertificatDaccomplissement_Le_deploiement_de_lIA_generative_dans_les_organisations.pdf" target="_blank" rel="noopener noreferrer">
+              Voir
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+
+          <!-- Cert 2 : LinkedIn Learning — Prompt Engineering -->
+          <div class="cert-card">
+            <div class="cert-logo cert-logo-li">
+              <svg width="20" height="20" viewBox="0 0 128 128" fill="none"><rect width="128" height="128" rx="12" fill="#0A66C2"/><path fill="#fff" d="M40 52h16v40H40zm8-24a9 9 0 1 1 0 18 9 9 0 0 1 0-18zm20 24h15v5.5c2.1-3.9 7.2-5.5 11.5-5.5C107 52 108 63 108 72v20H92V74c0-5-.1-11.5-7-11.5S76 68.7 76 74v18H60V52z"/></svg>
+              <span>LinkedIn Learning</span>
+            </div>
+            <p class="cert-name">Les prompts engineering avancés</p>
+            <div class="cert-meta">
+              <span class="cert-tags">
+                <span class="cert-tag">ChatGPT</span>
+                <span class="cert-tag">Ingénierie de Prompt</span>
+              </span>
+              <span class="cert-date">Mai 2026 · 1h38</span>
+            </div>
+            <a class="cert-btn" href="CertificatDaccomplissement_Les_prompts_engineering_avances.pdf" target="_blank" rel="noopener noreferrer">
+              Voir
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+
+          <!-- Cert 3 : LinkedIn Learning — n8n -->
+          <div class="cert-card">
+            <div class="cert-logo cert-logo-li">
+              <svg width="20" height="20" viewBox="0 0 128 128" fill="none"><rect width="128" height="128" rx="12" fill="#0A66C2"/><path fill="#fff" d="M40 52h16v40H40zm8-24a9 9 0 1 1 0 18 9 9 0 0 1 0-18zm20 24h15v5.5c2.1-3.9 7.2-5.5 11.5-5.5C107 52 108 63 108 72v20H92V74c0-5-.1-11.5-7-11.5S76 68.7 76 74v18H60V52z"/></svg>
+              <span>LinkedIn Learning</span>
+            </div>
+            <p class="cert-name">L'essentiel de n8n</p>
+            <div class="cert-meta">
+              <span class="cert-tags">
+                <span class="cert-tag">Agents IA</span>
+                <span class="cert-tag">Automatisation</span>
+              </span>
+              <span class="cert-date">Mai 2026 · 1h12</span>
+            </div>
+            <a class="cert-btn" href="CertificatDaccomplissement_Lessentiel_de_n8n.pdf" target="_blank" rel="noopener noreferrer">
+              Voir
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+
+          <!-- Cert 4 : Udemy — Développement Web -->
+          <div class="cert-card">
+            <div class="cert-logo cert-logo-udemy">
+              <svg width="20" height="20" viewBox="0 0 128 128" fill="none"><rect width="128" height="128" rx="12" fill="#A435F0"/><path fill="#fff" d="M32 40h16v48H32zm0 0M64 40h16v28.4c0 8 5.4 12.6 12 12.6s12-4.6 12-12.6V40h16v28.4C120 71 118 88 96 88s-32-17-32-19.6V40z"/></svg>
+              <span>Udemy</span>
+            </div>
+            <p class="cert-name">24 Certifications en Développement Web : 100% Pratique +100h</p>
+            <div class="cert-meta">
+              <span class="cert-tags">
+                <span class="cert-tag">Développement Web</span>
+                <span class="cert-tag">99.5h</span>
+              </span>
+              <span class="cert-date">Fév. 2024</span>
+            </div>
+            <a class="cert-btn" href="Certifications_en_developpement_web.pdf" target="_blank" rel="noopener noreferrer">
+              Voir
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+
+          <!-- Cert 5 : CCNA en cours -->
+          <div class="cert-card cert-card-wip">
+            <div class="cert-logo cert-logo-cisco">
+              <svg width="20" height="20" viewBox="0 0 128 128" fill="none"><rect width="128" height="128" rx="12" fill="#1BA0D7"/><text x="64" y="82" font-size="44" text-anchor="middle" fill="#fff" font-family="sans-serif" font-weight="700">C</text></svg>
+              <span>Cisco</span>
+            </div>
+            <p class="cert-name">CCNA — Réseaux & Cybersécurité</p>
+            <div class="cert-meta">
+              <span class="cert-tags">
+                <span class="cert-tag">Réseaux</span>
+                <span class="cert-tag">Cybersécurité</span>
+              </span>
+              <span class="cert-date wip-label"><span class="wip-dot"></span>En cours</span>
+            </div>
+            <span class="cert-btn cert-btn-disabled">En cours…</span>
+          </div>
+
+        </div>
       </div>
     </div>
   </section>
