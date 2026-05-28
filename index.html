@@ -326,6 +326,7 @@ section{position:relative;padding:8rem 6vw}
 .importance-card h4{font-family:'Playfair Display',serif;font-weight:700;font-size:1rem;color:#fff;margin-bottom:.5rem}
 .importance-card p{font-size:.82rem;color:rgba(255,255,255,.85);line-height:1.65;font-weight:300}
 
+.proj-header{display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:2rem;flex-wrap:wrap}
 .proj-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:.5rem}
 .metric-item{padding:1.5rem;text-align:center;border:1px solid rgba(255,255,255,.12);border-radius:16px;transition:background .3s,transform .3s,box-shadow .3s}
 
@@ -511,6 +512,65 @@ section{position:relative;padding:8rem 6vw}
 /* ══════════════════════════════════
    DYNAMISME — AJOUTS GLOBAUX
 ══════════════════════════════════ */
+
+/* ══ TITRES PROJETS — EFFETS COULEURS ══ */
+
+/* Projet 1 : InvestWorld — bleu électrique → cyan → violet */
+@keyframes sweep-1{0%{background-position:0% center}100%{background-position:200% center}}
+.proj-title-1{
+  background:linear-gradient(90deg,
+    #fff 0%,
+    #60a5fa 18%,
+    #a78bfa 35%,
+    #fff 50%,
+    #38bdf8 68%,
+    #818cf8 85%,
+    #fff 100%
+  );
+  background-size:200% auto;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  animation:sweep-1 4s linear infinite;
+}
+
+/* Projet 2 : IA Academy — vert → emeraude → teal */
+@keyframes sweep-2{0%{background-position:0% center}100%{background-position:200% center}}
+.proj-title-2{
+  background:linear-gradient(90deg,
+    #fff 0%,
+    #4ade80 18%,
+    #2dd4bf 35%,
+    #fff 50%,
+    #34d399 68%,
+    #06b6d4 85%,
+    #fff 100%
+  );
+  background-size:200% auto;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  animation:sweep-2 4s linear infinite;
+}
+
+/* Projet 3 : Nike — orange → rose → ambre */
+@keyframes sweep-3{0%{background-position:0% center}100%{background-position:200% center}}
+.proj-title-3{
+  background:linear-gradient(90deg,
+    #fff 0%,
+    #fb923c 18%,
+    #f472b6 35%,
+    #fff 50%,
+    #fbbf24 68%,
+    #f43f5e 85%,
+    #fff 100%
+  );
+  background-size:200% auto;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  animation:sweep-3 4s linear infinite;
+}
 
 /* ── GLITCH SUR LE NOM (page 2) ── */
 @keyframes glitch-1{
@@ -852,11 +912,12 @@ section{position:relative;padding:8rem 6vw}
     <p class="sec-label">02 — Projets Phares</p>
     <h2 class="sec-title">Ce que<br><em>je construis.</em></h2>
 
-    <!-- HEADER PROJET -->
+    <!-- ══ PROJET 1 : INVESTWORLD ══ -->
     <div class="proj-header">
       <div>
-        <h3 class="proj-main-title">InvestWorld</h3>
+        <h3 class="proj-main-title proj-title-1">InvestWorld</h3>
         <p class="proj-main-sub">Plateforme Startup × Investisseur</p>
+        <p class="proj-main-desc">Mise en relation intelligente entre startups africaines et investisseurs internationaux — scoring pondéré sur 6 critères, NDA automatisé, messagerie chiffrée et Data Room sécurisée.</p>
         <p class="proj-stack-line">Node.js · Supabase · Stripe · IA Logic</p>
       </div>
       <div style="display:flex;flex-direction:column;align-items:flex-end;gap:1rem">
@@ -868,130 +929,38 @@ section{position:relative;padding:8rem 6vw}
       </div>
     </div>
 
-    <!-- PROBLÈME / SOLUTION -->
-    <div class="proj-ps-grid">
-      <div class="proj-ps-col">
-        <p class="proj-ps-title">Problème</p>
-        <p class="proj-ps-text">Les <strong>startups africaines</strong> ont un accès limité aux investisseurs internationaux — barrières géographiques, manque de visibilité, processus opaques.</p>
-      </div>
-      <div class="proj-ps-col">
-        <p class="proj-ps-title solution">Solution</p>
-        <p class="proj-ps-text">Plateforme avec <strong>scoring intelligent</strong> en temps réel couvrant <strong>190+ pays</strong>, workflow NDA automatisé et messagerie chiffrée.</p>
-      </div>
-    </div>
-
-    <!-- ALGORITHME -->
     <div class="proj-algo">
       <p class="proj-block-title"><span class="block-icon" style="color:rgba(255,255,255,0.9)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/></svg></span> Algorithme de Matching</p>
       <div class="proj-formula">
         <code>score = 0.25 × <em>secteur</em> + 0.20 × <em>stade</em> + 0.15 × <em>région</em> + 0.15 × <em>ticket</em> + 0.15 × <em>ESG</em> + 0.10 × <em>urgence</em></code>
-        <p class="proj-formula-result">→ Score 0~100 en temps réel</p>
+        <p class="proj-formula-result">→ Score 0~100 en temps réel · 190+ pays couverts</p>
       </div>
     </div>
 
-    <!-- ARCHITECTURE + DÉFIS -->
-    <div class="proj-arch-grid">
-      <div class="proj-arch">
-        <p class="proj-block-title"><span class="block-icon" style="color:rgba(255,255,255,0.9)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"/><path d="M5 20V8l7-6 7 6v12"/><path d="M9 20v-6h6v6"/></svg></span> Architecture Technique</p>
-        <div class="proj-arch-flow">
-          <div class="arch-node frontend">Frontend</div>
-          <div class="arch-arrow">→</div>
-          <div class="arch-node api">API<br>Node.js</div>
-          <div class="arch-arrow">→</div>
-          <div class="arch-node db">Supabase<br><small>PostgreSQL</small></div>
-          <div class="arch-arrow">→</div>
-          <div class="arch-node stripe">Stripe<br><small>Paiement</small></div>
-        </div>
-        <div class="arch-email">
-          <div class="arch-node email">✉ Emails — Notifications</div>
-        </div>
-      </div>
-      <div class="proj-defis">
-        <p class="proj-block-title"><span class="block-icon" style="color:rgba(255,255,255,0.9)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></span> Défis Techniques</p>
-        <ul class="defis-list">
-          <li>Synchronisation temps réel</li>
-          <li>Sécurité API (JWT)</li>
-          <li>Gestion des paiements Stripe</li>
-          <li>Architecture multi-portails</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- CODE + SCORE -->
-    <div class="proj-code-grid">
-      <div class="proj-code">
-        <p class="proj-block-title"><span class="block-icon" style="color:rgba(255,255,255,0.9)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span> Extrait de Code</p>
-        <pre class="code-block"><code><span class="c-kw">function</span> <span class="c-fn">calculateScore</span>(startup, investor) {
-  <span class="c-kw">return</span> (
-    <span class="c-num">0.25</span> * matchSector(startup, investor) +
-    <span class="c-num">0.20</span> * matchStage(startup, investor)  +
-    <span class="c-num">0.15</span> * matchRegion(startup, investor) +
-    <span class="c-num">0.15</span> * matchTicket(startup, investor) +
-    <span class="c-num">0.15</span> * matchESG(startup, investor)    +
-    <span class="c-num">0.10</span> * matchUrgency(startup)
-  );
-}</code></pre>
-      </div>
-      <div class="proj-score-preview">
-        <p class="proj-block-title"><span class="block-icon" style="color:rgba(255,255,255,0.9)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span> Score de Matching</p>
-        <div class="score-card">
-          <span class="score-num">82</span>
-          <span class="score-label">Adéquation<br>Élevée</span>
-        </div>
-        <div class="score-details">
-          <div class="score-bar-item"><span>Secteur</span><div class="bar"><div style="width:92%"></div></div></div>
-          <div class="score-bar-item"><span>Stade</span><div class="bar"><div style="width:78%"></div></div></div>
-          <div class="score-bar-item"><span>Région</span><div class="bar"><div style="width:85%"></div></div></div>
-          <div class="score-bar-item"><span>Ticket</span><div class="bar"><div style="width:70%"></div></div></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- POURQUOI INVESTWORLD -->
     <div class="proj-importance">
-      <p class="proj-block-title"><span class="block-icon" style="color:rgba(255,255,255,0.9)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/><circle cx="12" cy="12" r="4"/></svg></span> Pourquoi InvestWorld ?</p>
+      <p class="proj-block-title"><span class="block-icon" style="color:rgba(255,255,255,0.9)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span> Points Clés</p>
       <div class="importance-grid">
         <div class="importance-card">
           <span class="importance-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
           <h4>Accès Global</h4>
-          <p>90% des startups africaines n'ont aucun accès structuré aux investisseurs internationaux. InvestWorld brise cette barrière en couvrant 190+ pays.</p>
-        </div>
-        <div class="importance-card">
-          <span class="importance-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
-          <h4>Matching Intelligent</h4>
-          <p>Un algorithme propriétaire calcule en temps réel l'adéquation entre une startup et un investisseur — éliminant les mises en relation non pertinentes.</p>
+          <p>90% des startups africaines sans accès structuré aux investisseurs. InvestWorld brise cette barrière sur 190+ pays.</p>
         </div>
         <div class="importance-card">
           <span class="importance-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
-          <h4>Sécurité &amp; Confiance</h4>
-          <p>Workflow NDA automatisé, messagerie chiffrée et Data Room sécurisée — chaque échange est protégé avant l'accès aux documents sensibles.</p>
-        </div>
-        <div class="importance-card">
-          <span class="importance-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
-          <h4>Impact Mesurable</h4>
-          <p>Les startups suivent leur levée en temps réel : taux de complétude, demandes NDA, montants sécurisés et actions urgentes depuis un seul dashboard.</p>
+          <h4>Sécurité & Confiance</h4>
+          <p>NDA automatisé, messagerie chiffrée et Data Room sécurisée — chaque échange est protégé avant l'accès aux documents sensibles.</p>
         </div>
       </div>
     </div>
 
-    <!-- MÉTRIQUES -->
-    <div class="proj-metrics">
-      <div class="metric-item"><span class="metric-num">15+</span><span class="metric-label">Endpoints Backend</span></div>
-      <div class="metric-item"><span class="metric-num">6</span><span class="metric-label">Critères de Matching</span></div>
-      <div class="metric-item"><span class="metric-num">&lt;300ms</span><span class="metric-label">Temps de Réponse</span></div>
-      <div class="metric-item"><span class="metric-num">190+</span><span class="metric-label">Pays Ciblés</span></div>
-    </div>
-
-    <!-- ══ SÉPARATEUR PROJET ══ -->
     <div style="width:100%;height:1px;background:rgba(255,255,255,.1);margin:4rem 0"></div>
 
-    <!-- ══════════ PROJET 2 : IA ACADEMY ══════════ -->
-
-    <!-- HEADER PROJET -->
+    <!-- ══ PROJET 2 : IA ACADEMY ══ -->
     <div class="proj-header">
       <div>
-        <h3 class="proj-main-title">IA Academy</h3>
+        <h3 class="proj-main-title proj-title-2">IA Academy</h3>
         <p class="proj-main-sub">Plateforme de Formation aux Métiers de l'IA</p>
+        <p class="proj-main-desc">E-learning centré sur les vrais métiers de l'IA — parcours adaptatif en 4 niveaux, tuteur IA intégré, projets concrets et certifications progressives partageables sur LinkedIn.</p>
         <p class="proj-stack-line">React · Node.js · Supabase · OpenAI API · Stripe</p>
       </div>
       <div style="display:flex;flex-direction:column;align-items:flex-end;gap:1rem">
@@ -1003,23 +972,10 @@ section{position:relative;padding:8rem 6vw}
       </div>
     </div>
 
-    <!-- PROBLÈME / SOLUTION -->
-    <div class="proj-ps-grid">
-      <div class="proj-ps-col">
-        <p class="proj-ps-title">Problème</p>
-        <p class="proj-ps-text">Les formations IA existantes sont soit <strong>trop théoriques</strong>, soit réservées aux profils déjà techniques. La majorité des apprenants — surtout en Afrique — n'ont pas accès à un parcours <strong>structuré, concret et adapté</strong> aux vrais métiers de l'IA.</p>
-      </div>
-      <div class="proj-ps-col">
-        <p class="proj-ps-title solution">Solution</p>
-        <p class="proj-ps-text">Une plateforme e-learning centrée sur les <strong>métiers réels de l'IA</strong> : prompt engineer, data analyst, ML engineer, AI product manager — avec des projets pratiques, un assistant IA intégré et un système de <strong>certification progressive</strong>.</p>
-      </div>
-    </div>
-
-    <!-- OFFRE PÉDAGOGIQUE -->
     <div class="proj-algo">
       <p class="proj-block-title">
         <span class="block-icon" style="color:rgba(255,255,255,0.9)">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><line x1="12" y1="7" x2="16" y2="7"/><line x1="12" y1="11" x2="16" y2="11"/><line x1="12" y1="15" x2="14" y2="15"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
         </span>
         Parcours Pédagogique
       </p>
@@ -1034,104 +990,35 @@ section{position:relative;padding:8rem 6vw}
       </div>
     </div>
 
-    <!-- ARCHITECTURE + DÉFIS -->
-    <div class="proj-arch-grid">
-      <div class="proj-arch">
-        <p class="proj-block-title">
-          <span class="block-icon" style="color:rgba(255,255,255,0.9)">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          </span>
-          Architecture Technique
-        </p>
-        <div class="proj-arch-flow">
-          <div class="arch-node frontend">React<br><small>Frontend</small></div>
-          <div class="arch-arrow">→</div>
-          <div class="arch-node api">API<br>Node.js</div>
-          <div class="arch-arrow">→</div>
-          <div class="arch-node db">Supabase<br><small>Auth + DB</small></div>
-          <div class="arch-arrow">→</div>
-          <div class="arch-node stripe">Stripe<br><small>Abonnement</small></div>
-        </div>
-        <div class="arch-email">
-          <div class="arch-node email" style="background:#7c3aed">🤖 OpenAI API — Assistant IA Intégré</div>
-        </div>
-      </div>
-      <div class="proj-defis">
-        <p class="proj-block-title">
-          <span class="block-icon" style="color:rgba(255,255,255,0.9)">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
-          </span>
-          Défis Techniques
-        </p>
-        <ul class="defis-list">
-          <li>Personnalisation du parcours par IA</li>
-          <li>Évaluation automatique des projets</li>
-          <li>Gestion des abonnements & accès</li>
-          <li>Intégration LLM dans les cours</li>
-          <li>Scalabilité multi-langues</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- FONCTIONNALITÉS CLÉS -->
     <div class="proj-importance">
       <p class="proj-block-title">
         <span class="block-icon" style="color:rgba(255,255,255,0.9)">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </span>
-        Fonctionnalités Clés
+        Points Clés
       </p>
       <div class="importance-grid">
         <div class="importance-card">
-          <span class="importance-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-          </span>
+          <span class="importance-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></span>
           <h4>Parcours Adaptatif</h4>
-          <p>L'IA analyse le profil de l'apprenant — niveau, rythme, objectifs — et adapte dynamiquement le contenu, les exercices et la progression pour maximiser l'apprentissage.</p>
+          <p>L'IA analyse le profil de l'apprenant et adapte dynamiquement le contenu, les exercices et la progression.</p>
         </div>
         <div class="importance-card">
-          <span class="importance-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          </span>
-          <h4>Assistant IA Intégré</h4>
-          <p>Un tuteur IA disponible 24h/24 répond aux questions de l'apprenant directement dans le cours, explique les concepts complexes et propose des exercices supplémentaires à la demande.</p>
-        </div>
-        <div class="importance-card">
-          <span class="importance-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          </span>
-          <h4>Projets Réels & Certification</h4>
-          <p>Chaque niveau se conclut par un projet concret évalué automatiquement. Les certifications délivrées sont vérifiables et directement partageables sur LinkedIn.</p>
-        </div>
-        <div class="importance-card">
-          <span class="importance-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-          </span>
-          <h4>Accès Freemium & Abonnement</h4>
-          <p>Le niveau 1 est entièrement gratuit pour éliminer les barrières à l'entrée. Les niveaux avancés sont accessibles via abonnement mensuel géré par Stripe, avec tarif adapté aux marchés africains.</p>
+          <span class="importance-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+          <h4>Freemium & Abonnement</h4>
+          <p>Niveau 1 gratuit pour éliminer les barrières, niveaux avancés via Stripe — tarif adapté aux marchés africains.</p>
         </div>
       </div>
     </div>
 
-    <!-- MÉTRIQUES IA ACADEMY -->
-    <div class="proj-metrics">
-      <div class="metric-item"><span class="metric-num">4</span><span class="metric-label">Niveaux de Formation</span></div>
-      <div class="metric-item"><span class="metric-num">10+</span><span class="metric-label">Métiers IA Couverts</span></div>
-      <div class="metric-item"><span class="metric-num">24/7</span><span class="metric-label">Tuteur IA Disponible</span></div>
-      <div class="metric-item"><span class="metric-num">100%</span><span class="metric-label">Orienté Pratique</span></div>
-    </div>
-
-    <!-- ══ SÉPARATEUR PROJET ══ -->
     <div style="width:100%;height:1px;background:rgba(255,255,255,.1);margin:4rem 0"></div>
 
-    <!-- ══════════ PROJET 3 : NIKE CONCEPT STORE ══════════ -->
-
-    <!-- HEADER PROJET -->
+    <!-- ══ PROJET 3 : NIKE CONCEPT STORE ══ -->
     <div class="proj-header">
       <div>
-        <h3 class="proj-main-title">Nike Concept Store</h3>
+        <h3 class="proj-main-title proj-title-3">Nike Concept Store</h3>
         <p class="proj-main-sub">Boutique Concept HTML / CSS / JS Pure</p>
-        <p class="proj-main-desc">Un concept store Nike entièrement statique avec landing page animée, catalogue produits interactif et modal de détail — aucun framework, zéro dépendance.</p>
+        <p class="proj-main-desc">Landing page animée, catalogue interactif et modal produit — aucun framework, zéro dépendance. Une démonstration de maîtrise du front-end pur.</p>
         <p class="proj-stack-line">HTML · CSS · JavaScript Vanilla</p>
       </div>
       <div style="display:flex;flex-direction:column;align-items:flex-end;gap:1rem">
@@ -1143,64 +1030,15 @@ section{position:relative;padding:8rem 6vw}
       </div>
     </div>
 
-    <!-- PROBLÈME / SOLUTION -->
     <div class="proj-ps-grid">
       <div class="proj-ps-col">
         <p class="proj-ps-title">Objectif</p>
-        <p class="proj-ps-text">Démontrer ma maîtrise du <strong>front-end pur</strong> : animations CSS avancées, transitions fluides entre pages et gestion d'état sans framework.</p>
+        <p class="proj-ps-text">Démontrer ma maîtrise du <strong>front-end pur</strong> : animations CSS avancées, transitions fluides et gestion d'état sans framework.</p>
       </div>
       <div class="proj-ps-col">
         <p class="proj-ps-title solution">Résultat</p>
-        <p class="proj-ps-text">Une expérience <strong>landing page → shop → modal produit</strong> entièrement animée, responsive et déployée sur Vercel — HTML, CSS et JS uniquement.</p>
+        <p class="proj-ps-text">Expérience <strong>landing → shop → modal</strong> entièrement animée, responsive et déployée sur Vercel — HTML, CSS et JS uniquement.</p>
       </div>
-    </div>
-
-    <!-- FONCTIONNALITÉS CLÉS -->
-    <div class="proj-importance">
-      <p class="proj-block-title">
-        <span class="block-icon" style="color:rgba(255,255,255,0.9)">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </span>
-        Ce que ce projet démontre
-      </p>
-      <div class="importance-grid">
-        <div class="importance-card">
-          <span class="importance-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </span>
-          <h4>Animations CSS Avancées</h4>
-          <p>Transitions page-à-page, animations d'entrée au scroll et micro-interactions sur chaque élément — entièrement en CSS natif.</p>
-        </div>
-        <div class="importance-card">
-          <span class="importance-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          </span>
-          <h4>Design Responsive</h4>
-          <p>Mise en page adaptée mobile, tablette et desktop avec un design soigné inspiré de l'identité visuelle Nike.</p>
-        </div>
-        <div class="importance-card">
-          <span class="importance-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="2"/></svg>
-          </span>
-          <h4>JS Vanilla Organisé</h4>
-          <p>Architecture modulaire en JS pur : gestion du modal, du shop et des transitions séparés dans des fichiers dédiés — sans jQuery ni framework.</p>
-        </div>
-        <div class="importance-card">
-          <span class="importance-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </span>
-          <h4>Déployé en Production</h4>
-          <p>Hébergé sur Vercel avec CI/CD via GitHub — pipeline de déploiement automatique à chaque push sur main.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- MÉTRIQUES NIKE -->
-    <div class="proj-metrics">
-      <div class="metric-item"><span class="metric-num">3</span><span class="metric-label">Pages / Vues</span></div>
-      <div class="metric-item"><span class="metric-num">6</span><span class="metric-label">Fichiers CSS</span></div>
-      <div class="metric-item"><span class="metric-num">0</span><span class="metric-label">Dépendances</span></div>
-      <div class="metric-item"><span class="metric-num">100%</span><span class="metric-label">Vanilla JS</span></div>
     </div>
 
   </section>
