@@ -582,6 +582,7 @@ section{position:relative;padding:8rem 6vw}
 .proj-card-title{
   font-family:'Playfair Display',serif;font-weight:700;
   font-size:clamp(1.1rem,1.8vw,1.4rem);color:#fff;line-height:1.2;
+  display:block;
 }
 .proj-card-desc{
   font-size:.875rem;color:rgba(255,255,255,.72);line-height:1.65;font-weight:400;
@@ -1051,6 +1052,216 @@ nav{
   /* ── Wave sep ── */
   .wave-sep{height:60px}
 }
+
+/* ══════════════════════════════════
+   DARK / LIGHT MODE TOGGLE
+══════════════════════════════════ */
+
+/* ── Toggle switch style Apple ── */
+#theme-toggle{
+  position:relative;
+  display:flex;align-items:center;
+  width:56px;height:30px;
+  border-radius:999px;
+  background:#e4e4e7;
+  border:none;
+  cursor:pointer;
+  padding:0;
+  flex-shrink:0;
+  transition:background .35s cubic-bezier(.16,1,.3,1);
+  box-shadow:0 0 0 0 rgba(18,69,204,0);
+  outline:none;
+  -webkit-tap-highlight-color:transparent;
+}
+#theme-toggle:focus-visible{
+  box-shadow:0 0 0 3px rgba(18,69,204,.35);
+}
+/* Track actif (dark) */
+body.dark #theme-toggle{ background:#1245CC }
+
+/* Thumb — le rond blanc qui glisse */
+#theme-toggle .thumb{
+  position:absolute;
+  left:3px;
+  width:24px;height:24px;
+  border-radius:50%;
+  background:#fff;
+  box-shadow:0 1px 4px rgba(0,0,0,.18), 0 2px 8px rgba(0,0,0,.12);
+  transition:transform .38s cubic-bezier(.34,1.56,.64,1), box-shadow .3s;
+  display:flex;align-items:center;justify-content:center;
+}
+#theme-toggle:hover .thumb{
+  box-shadow:0 2px 8px rgba(0,0,0,.22), 0 4px 16px rgba(0,0,0,.1);
+}
+body.dark #theme-toggle .thumb{
+  transform:translateX(26px);
+  box-shadow:0 1px 4px rgba(0,0,0,.3), 0 2px 8px rgba(0,0,0,.2);
+}
+
+/* Icônes dans le thumb */
+#theme-toggle .icon-sun,
+#theme-toggle .icon-moon{
+  position:absolute;
+  width:13px;height:13px;
+  transition:opacity .25s, transform .3s cubic-bezier(.16,1,.3,1);
+}
+#theme-toggle .icon-sun{ opacity:1; transform:rotate(0deg) scale(1) }
+#theme-toggle .icon-moon{ opacity:0; transform:rotate(60deg) scale(.5) }
+
+body.dark #theme-toggle .icon-sun{ opacity:0; transform:rotate(-60deg) scale(.5) }
+body.dark #theme-toggle .icon-moon{ opacity:1; transform:rotate(0deg) scale(1) }
+
+/* ── Transitions globales ── */
+#page-parcours,#page-parcours *{
+  transition:background-color .4s ease, color .4s ease, border-color .4s ease, box-shadow .4s ease;
+}
+
+/* ── Variables CSS ── */
+:root{
+  --bg-main:#ffffff;
+  --bg-alt:#f7f8fc;
+  --text-primary:#050505;
+  --text-secondary:rgba(0,0,0,.85);
+  --text-muted:rgba(0,0,0,.45);
+  --border-color:rgba(0,0,0,.08);
+  --nav-bg:rgba(255,255,255,.55);
+  --card-bg:#fafafa;
+  --card-border:rgba(0,0,0,.08);
+  --skill-item-color:rgba(0,0,0,.85);
+  --skill-border:rgba(0,0,0,.05);
+  --cert-bg:#fafafa;
+  --hero-eyebrow-color:rgba(0,0,0,.75);
+}
+
+body.dark{
+  --bg-main:#0d0f14;
+  --bg-alt:#13161e;
+  --text-primary:#f0f2f8;
+  --text-secondary:rgba(240,242,248,.85);
+  --text-muted:rgba(240,242,248,.4);
+  --border-color:rgba(255,255,255,.07);
+  --nav-bg:rgba(13,15,20,.75);
+  --card-bg:#181b24;
+  --card-border:rgba(255,255,255,.07);
+  --skill-item-color:rgba(240,242,248,.85);
+  --skill-border:rgba(255,255,255,.06);
+  --cert-bg:#181b24;
+  --hero-eyebrow-color:rgba(240,242,248,.6);
+}
+
+/* ── Application du thème ── */
+body.dark #page-parcours{ background:var(--bg-main) }
+
+/* Nav */
+body.dark nav{
+  background:var(--nav-bg);
+  border-bottom-color:rgba(255,255,255,.07);
+  box-shadow:0 1px 0 rgba(255,255,255,.04) inset, 0 4px 24px rgba(0,0,0,.3);
+}
+body.dark .nav-logo{ color:var(--text-primary) }
+body.dark .nav-links a{ color:rgba(240,242,248,.75) }
+body.dark .nav-links a:hover{ color:#60a5fa }
+body.dark .nav-links a::after{ background:#60a5fa }
+
+/* Sections blanches → fond sombre */
+body.dark #p-hero{ background:var(--bg-main) }
+body.dark #competences{ background:var(--bg-main) }
+body.dark #certifications{ background:var(--bg-alt) }
+
+/* Hero textes */
+body.dark .hero-eyebrow{ color:var(--hero-eyebrow-color) }
+body.dark .hero-name{ color:var(--text-primary) }
+body.dark .hero-role{ color:#60a5fa }
+body.dark .hero-divider{ background:linear-gradient(90deg,#60a5fa,transparent) }
+body.dark .hero-bio{ color:var(--text-secondary) }
+body.dark .hero-bio strong{ color:var(--text-primary) }
+body.dark p[style*="color:rgba(0,0,0,.75)"]{ color:rgba(240,242,248,.6) !important }
+
+/* Vision */
+body.dark .vision-title{ color:var(--text-primary) }
+body.dark .vision-intro{ color:var(--text-secondary) }
+body.dark .pillar-title{ color:var(--text-primary) }
+body.dark .pillar-desc{ color:var(--text-secondary) }
+body.dark .vision-goal{ color:var(--text-secondary);border-top-color:rgba(255,255,255,.07) }
+body.dark .vision-goal strong{ color:var(--text-primary) }
+
+/* Boutons hero */
+body.dark .btn-hero.outline{
+  border-color:rgba(255,255,255,.15);
+  color:var(--text-primary);
+  background:rgba(255,255,255,.06);
+}
+body.dark .btn-hero.outline:hover{
+  background:rgba(255,255,255,.1);
+  border-color:rgba(255,255,255,.3);
+}
+
+/* Social icons */
+body.dark .social-icon{
+  border-color:rgba(255,255,255,.12);
+  color:var(--text-secondary);
+}
+body.dark .social-icon:hover{
+  border-color:#60a5fa;
+  box-shadow:0 4px 16px rgba(96,165,250,.2);
+}
+body.dark .social-icon svg{ stroke:var(--text-secondary) }
+
+/* Scroll hint */
+body.dark .st{ color:rgba(240,242,248,.3) }
+
+/* Sec labels & titles (sections blanches) */
+body.dark #competences .sec-label,
+body.dark #certifications .sec-label{ color:rgba(240,242,248,.45) }
+body.dark #competences .sec-title,
+body.dark #certifications .sec-title{ color:var(--text-primary) }
+
+/* Skill cards */
+body.dark .skill-cat{
+  background:var(--card-bg);
+  border-color:var(--card-border);
+  box-shadow:0 2px 8px rgba(0,0,0,.2),0 8px 24px rgba(0,0,0,.15);
+}
+body.dark .skill-cat:hover{
+  border-color:rgba(96,165,250,.2);
+  box-shadow:0 4px 16px rgba(0,0,0,.25),0 24px 48px rgba(96,165,250,.08);
+}
+body.dark .skill-cat-title{ color:#60a5fa }
+body.dark .skill-cat-title::before{ background:#60a5fa }
+body.dark .skill-cat .spotlight{
+  background:radial-gradient(circle, rgba(96,165,250,.1) 0%, transparent 70%);
+}
+body.dark .skill-item{ color:var(--skill-item-color);border-bottom-color:var(--skill-border) }
+body.dark .skill-item:hover{ color:var(--text-primary) }
+
+/* Skill levels */
+body.dark .skill-level{ border-bottom-color:rgba(255,255,255,.05) }
+body.dark .skill-level-left{ color:rgba(240,242,248,.88) }
+body.dark .lvl-bar-bg{ background:rgba(255,255,255,.06) }
+
+/* Cert cards */
+body.dark .cert-card{
+  background:var(--cert-bg);
+  border-color:var(--card-border);
+  box-shadow:0 2px 8px rgba(0,0,0,.2),0 6px 20px rgba(0,0,0,.15);
+}
+body.dark .cert-card:hover{
+  border-color:rgba(96,165,250,.2);
+  box-shadow:0 4px 16px rgba(0,0,0,.25),0 20px 40px rgba(96,165,250,.08);
+}
+body.dark .cert-name{ color:var(--text-primary) }
+body.dark .cert-date{ color:rgba(240,242,248,.35) }
+body.dark .cert-tag{
+  background:rgba(96,165,250,.1);
+  color:#93c5fd;
+}
+
+/* Hero photo badge */
+body.dark .hero-photo-badge{
+  background:rgba(20,22,30,.9);
+  border-color:rgba(255,255,255,.1);
+  color:var(--text-primary);
+}
 </style>
 </head>
 <body>
@@ -1113,6 +1324,20 @@ nav{
       <a href="#parcours-sec">Parcours</a>
       <a href="#contact">Contact</a>
     </div>
+    <button id="theme-toggle" aria-label="Changer de thème" title="Mode sombre / lumineux">
+      <span class="thumb">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="#c7d2fe" stroke="#818cf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </span>
+    </button>
   </nav>
 
   <section id="p-hero" style="overflow:hidden">
@@ -1218,7 +1443,7 @@ nav{
           <span class="proj-card-badge wip">En cours</span>
         </div>
         <div class="proj-card-body">
-          <p class="proj-card-title">InvestWorld</p>
+          <p class="proj-card-title proj-title-1">InvestWorld</p>
           <p class="proj-card-desc">Mise en relation startups africaines × investisseurs internationaux — matching pondéré sur 6 critères, NDA automatisé et Data Room sécurisée.</p>
           <div class="proj-card-tags">
             <span class="proj-card-tag">Node.js</span>
@@ -1251,7 +1476,7 @@ nav{
           <span class="proj-card-badge concept">En conception</span>
         </div>
         <div class="proj-card-body">
-          <p class="proj-card-title">IA Academy</p>
+          <p class="proj-card-title proj-title-2">IA Academy</p>
           <p class="proj-card-desc">Plateforme e-learning dédiée aux métiers de l'IA — parcours adaptatif 4 niveaux, tuteur IA intégré et certifications partageables sur LinkedIn.</p>
           <div class="proj-card-tags">
             <span class="proj-card-tag">React</span>
@@ -1284,7 +1509,7 @@ nav{
           <span class="proj-card-badge done">Terminé</span>
         </div>
         <div class="proj-card-body">
-          <p class="proj-card-title">Nike Concept Store</p>
+          <p class="proj-card-title proj-title-3">Nike Concept Store</p>
           <p class="proj-card-desc">Landing page animée, catalogue interactif et modal produit en HTML / CSS / JS pur — zéro framework, démonstration de maîtrise front-end.</p>
           <div class="proj-card-tags">
             <span class="proj-card-tag">HTML</span>
@@ -1814,7 +2039,19 @@ document.querySelectorAll('.skill-cat').forEach(card=>{
     slides[i].classList.add('active');
   },3000);
 });
+/* ── DARK / LIGHT MODE ── */
+(function(){
+  const btn = document.getElementById('theme-toggle');
+  const body = document.body;
+  // Récupérer la préférence sauvegardée
+  const saved = localStorage.getItem('theme');
+  if(saved === 'dark') body.classList.add('dark');
+
+  btn.addEventListener('click', function(){
+    body.classList.toggle('dark');
+    localStorage.setItem('theme', body.classList.contains('dark') ? 'dark' : 'light');
+  });
+})();
 
 </script>
-</body>
 </html>
