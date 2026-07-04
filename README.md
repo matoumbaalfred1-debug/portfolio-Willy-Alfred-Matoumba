@@ -1,8 +1,8 @@
 <div align="center">
 
-# 🚀 Willy Alfred Matoumba — Portfolio
+# Willy Alfred Matoumba — Portfolio
 
-### *Building the 🚀 Future of Digital Innovation*
+### *Building the Future of Digital Innovation*
 *Le savoir-faire crée la différence.*
 
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)](#)
@@ -17,25 +17,25 @@
 
 ---
 
-## 📖 Sommaire
+## Sommaire
 
-- [À propos](#-à-propos)
-- [Aperçu](#-aperçu)
-- [Fonctionnalités](#-fonctionnalités)
-- [Stack technique](#-stack-technique)
-- [Structure du projet](#-structure-du-projet)
-- [Installation](#-installation)
-- [Sections du site](#-sections-du-site)
-- [Site bilingue (FR / TR)](#-site-bilingue-fr--tr)
-- [Formulaire de contact](#-formulaire-de-contact)
-- [Accessibilité & performance](#-accessibilité--performance)
-- [Roadmap](#-roadmap)
-- [Contact](#-contact)
+- [À propos](#à-propos)
+- [Aperçu](#aperçu)
+- [Fonctionnalités](#fonctionnalités)
+- [Stack technique](#stack-technique)
+- [Structure du projet](#structure-du-projet)
+- [Installation](#installation)
+- [Sections du site](#sections-du-site)
+- [Site bilingue (FR / TR)](#site-bilingue-fr--tr)
+- [Formulaire de contact](#formulaire-de-contact)
+- [Accessibilité & performance](#accessibilité--performance)
+- [Roadmap](#roadmap)
+- [Contact](#contact)
 - [Licence](#-licence)
 
 ---
 
-## 👋 À propos
+## À propos
 
 Portfolio personnel de **Willy Alfred Matoumba**, étudiant en 3ᵉ année de Génie Informatique, passionné d'**intelligence artificielle** et de **cybersécurité**, spécialisé dans la **détection d'anomalies par machine learning** et la **sécurité applicative**.
 
@@ -43,7 +43,7 @@ Ce site présente son parcours, ses projets, ses compétences techniques et ses 
 
 ---
 
-## ✨ Aperçu
+## Aperçu
 
 Un site one-page structuré en plusieurs sections, avec :
 
@@ -55,23 +55,23 @@ Un site one-page structuré en plusieurs sections, avec :
 
 ---
 
-## ⚡ Fonctionnalités
+## Fonctionnalités
 
 | Fonctionnalité | Description |
 |---|---|
-| 🌗 **Mode sombre / clair** | Bascule de thème avec variables CSS (`--bg-page`, `--text-1`, etc.) |
-| 🌍 **Site bilingue FR / TR** | Bouton de bascule de langue (style Apple, effet verre dépoli) qui traduit dynamiquement tout le contenu du site en turc |
-| 🪐 **Orbite de technologies** | Logos tech animés en rotation autour du hero |
-| ✍️ **Signature manuscrite animée** | Effet d'écriture SVG au chargement de la page |
-| 🗂️ **Certifications interactives** | Cartes avec actions *Voir*, *Télécharger* (PDF), *Partager* (Web Share API) |
-| 📊 **Barres de compétences animées** | Niveaux (*Intermédiaire*, *Avancé*, *Expert*) avec progression au scroll |
-| 📬 **Formulaire de contact** | Email + message, envoyé via un lien `mailto:` prérempli |
-| 🧭 **Navigation fluide** | Scroll animé (easing cubique) vers les ancres |
-| ♿ **Respect des préférences utilisateur** | `prefers-reduced-motion` pris en charge |
+| **Mode sombre / clair** | Bascule de thème avec variables CSS (`--bg-page`, `--text-1`, etc.) |
+| **Site bilingue FR / TR** | Bouton de bascule de langue (style Apple, effet verre dépoli) qui traduit dynamiquement tout le contenu du site en turc |
+| **Orbite de technologies** | Logos tech animés en rotation autour du hero |
+| **Signature manuscrite animée** | Effet d'écriture SVG au chargement de la page |
+| **Certifications interactives** | Cartes avec actions *Voir*, *Télécharger* (PDF), *Partager* (Web Share API) |
+| **Barres de compétences animées** | Niveaux (*Intermédiaire*, *Avancé*, *Expert*) avec progression au scroll |
+| **Formulaire de contact** | Email + message, envoyé via un lien `mailto:` prérempli |
+| **Navigation fluide** | Scroll animé (easing cubique) vers les ancres |
+| **Respect des préférences utilisateur** | `prefers-reduced-motion` pris en charge |
 
 ---
 
-## 🛠️ Stack technique
+## Stack technique
 
 **Frontend**
 ![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
@@ -90,7 +90,7 @@ Le site est développé en **HTML / CSS / JavaScript vanilla**, sans framework n
 
 ---
 
-## 📁 Structure du projet
+## Structure du projet
 
 ```
 portfolio/
@@ -103,7 +103,7 @@ portfolio/
 
 ---
 
-## ⚙️ Installation
+## Installation
 
 Aucune dépendance ni étape de build n'est nécessaire.
 
@@ -129,7 +129,7 @@ Puis activer **GitHub Pages** dans *Settings → Pages* du dépôt, sur la branc
 
 ---
 
-## 📍 Sections du site
+## Sections du site
 
 | # | Section | Ancre |
 |---|---|---|
@@ -150,7 +150,7 @@ Puis activer **GitHub Pages** dans *Settings → Pages* du dépôt, sur la branc
 
 ---
 
-## 🌍 Site bilingue (FR / TR)
+## Site bilingue (FR / TR)
 
 Un bouton dédié, dans le style Apple (pilule avec effet verre dépoli, animation ressort), permet de basculer l'intégralité du site du français vers le turc, et inversement.
 
@@ -164,7 +164,7 @@ Un bouton dédié, dans le style Apple (pilule avec effet verre dépoli, animati
 
 ---
 
-## 📬 Formulaire de contact
+## Formulaire de contact
 
 Le formulaire de la section *Contact* :
 
@@ -176,7 +176,7 @@ Aucune donnée n'est stockée ni transmise à un serveur tiers — tout se passe
 
 ---
 
-## ♿ Accessibilité & performance
+## Accessibilité & performance
 
 - Respect de `prefers-reduced-motion` pour désactiver les animations non essentielles
 - Contraste des couleurs adapté au mode sombre (`color-scheme`, variables CSS dédiées)
@@ -185,7 +185,7 @@ Aucune donnée n'est stockée ni transmise à un serveur tiers — tout se passe
 
 ---
 
-## 🧭 Roadmap
+## Roadmap
 
 - [ ] Finaliser **InvestWorld** et **FlowMind**
 - [ ] Ajouter de nouveaux projets
@@ -194,7 +194,7 @@ Aucune donnée n'est stockée ni transmise à un serveur tiers — tout se passe
 
 ---
 
-## ✉️ Contact
+## Contact
 
 - **GitHub** : [@matoumbaalfred1-debug](https://github.com/matoumbaalfred1-debug)
 - **LinkedIn** : [willy-alfred-matoumba](https://www.linkedin.com/in/willy-alfred-matoumba)
@@ -202,12 +202,12 @@ Aucune donnée n'est stockée ni transmise à un serveur tiers — tout se passe
 
 ---
 
-## 📄 Licence
+## Licence
 
 Ce projet est distribué sous licence **MIT** — libre à toi de t'en inspirer, mais merci de ne pas réutiliser le contenu personnel (photos, textes, certifications) tel quel.
 
 <div align="center">
 
-Fait avec ☕ et beaucoup de `console.log()` par **Willy Alfred Matoumba**
+Fait avec passion et beaucoup de `console.log()` par **Willy Alfred Matoumba**
 
 </div>
