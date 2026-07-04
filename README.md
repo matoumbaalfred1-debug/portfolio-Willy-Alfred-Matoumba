@@ -35,7 +35,7 @@
 
 ---
 
-## 🧑‍💻 À propos
+## 👋 À propos
 
 Portfolio personnel de **Willy Alfred Matoumba**, étudiant en 3ᵉ année de Génie Informatique, passionné d'**intelligence artificielle** et de **cybersécurité**, spécialisé dans la **détection d'anomalies par machine learning** et la **sécurité applicative**.
 
@@ -55,7 +55,7 @@ Un site one-page structuré en plusieurs sections, avec :
 
 ---
 
-## 🧩 Fonctionnalités
+## ⚡ Fonctionnalités
 
 | Fonctionnalité | Description |
 |---|---|
@@ -129,7 +129,7 @@ Puis activer **GitHub Pages** dans *Settings → Pages* du dépôt, sur la branc
 
 ---
 
-## 🗺️ Sections du site
+## 📍 Sections du site
 
 | # | Section | Ancre |
 |---|---|---|
@@ -194,7 +194,7 @@ Aucune donnée n'est stockée ni transmise à un serveur tiers — tout se passe
 
 ---
 
-## 📫 Contact
+## ✉️ Contact
 
 - **GitHub** : [@matoumbaalfred1-debug](https://github.com/matoumbaalfred1-debug)
 - **LinkedIn** : [willy-alfred-matoumba](https://www.linkedin.com/in/willy-alfred-matoumba)
