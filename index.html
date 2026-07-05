@@ -1850,11 +1850,42 @@
   .roadmap-wave path:nth-child(2) { transition-delay:0.35s; }
   .roadmap-wave path:nth-child(3) { transition-delay:0.5s; }
 
+  /* Version verticale du "wave", visible uniquement sur mobile (cf. maquette) */
+  .roadmap-wave-mobile {
+    display:none;
+    position:absolute;
+    top:0;
+    bottom:0;
+    right:14px;
+    width:70px;
+    height:100%;
+  }
+
+  .roadmap-wave-mobile path {
+    stroke-dasharray:2500;
+    stroke-dashoffset:2500;
+    transition:stroke-dashoffset 1.6s ease;
+    animation:wave-float 8s ease-in-out infinite;
+  }
+
+  .roadmap-wave-mobile path:nth-child(1) { animation-duration:7s; }
+  .roadmap-wave-mobile path:nth-child(2) { animation-duration:9.5s; animation-delay:0.4s; }
+  .roadmap-wave-mobile path:nth-child(3) { animation-duration:8.5s; animation-delay:0.8s; }
+
+  .evolution.is-visible .roadmap-wave-mobile path {
+    stroke-dashoffset:0;
+  }
+
+  .roadmap-wave-mobile path:nth-child(1) { transition-delay:0.2s; }
+  .roadmap-wave-mobile path:nth-child(2) { transition-delay:0.35s; }
+  .roadmap-wave-mobile path:nth-child(3) { transition-delay:0.5s; }
+
   @media (max-width:900px) {
     .evolution-title { font-size:32px; }
     .roadmap-row { flex-wrap:wrap; row-gap:56px; }
     .roadmap-stage { flex:1 1 40%; }
     .roadmap-wave { display:none; }
+    .roadmap-wave-mobile { display:block; }
     .roadmap { padding-bottom:0; }
   }
 
@@ -4685,6 +4716,12 @@
           <path d="M0,55 C150,15 300,95 450,55 C600,15 750,95 900,55 C1030,22 1110,60 1180,50" stroke="#8fd4ab" stroke-width="1.2" fill="none"/>
           <path d="M0,65 C160,30 310,100 460,65 C610,30 760,100 910,65 C1040,35 1115,68 1180,60" stroke="#a9e0bf" stroke-width="1.2" fill="none"/>
           <path d="M0,45 C140,5 290,80 440,45 C590,5 740,80 890,45 C1020,12 1105,50 1180,42" stroke="#6fc394" stroke-width="1.2" fill="none"/>
+        </svg>
+
+        <svg class="roadmap-wave-mobile" viewBox="0 0 120 1180" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M55,0 C15,150 95,300 55,450 C15,600 95,750 55,900 C22,1030 60,1110 50,1180" stroke="#8fd4ab" stroke-width="1.2" fill="none"/>
+          <path d="M65,0 C30,160 100,310 65,460 C30,610 100,760 65,910 C35,1040 68,1115 60,1180" stroke="#a9e0bf" stroke-width="1.2" fill="none"/>
+          <path d="M45,0 C5,140 80,290 45,440 C5,590 80,740 45,890 C12,1020 50,1105 42,1180" stroke="#6fc394" stroke-width="1.2" fill="none"/>
         </svg>
 
         <div class="roadmap-row">
